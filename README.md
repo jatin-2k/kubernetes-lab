@@ -4,6 +4,11 @@ A step by step guide to learning kubernetes
 ## kubernetes setup
 
 set up two vm's, one to act as kmaster and one as kworker and find their ip addresses. 
+```mermaid
+graph LR
+    A[Your Machine] --> B[Kmaster VM]
+    A --> C[Kworker VM]
+```
 
 NOTE: it would be better to set up ssh into those vms
 ```sh
