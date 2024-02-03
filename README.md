@@ -11,7 +11,6 @@ graph LR
     A[Your Machine] --> B[Kmaster VM]
     A --> C[Kworker VM]
     B --> C
-    C --> B
 ```
 
 NOTE: it would be better to set up ssh into those vms
@@ -31,6 +30,8 @@ ping kmaster
 ping kworker
 ```
 
+---
+
 ### Configure nodes
 
 make sure selinux is not enforced in your vm to avoid permission issue later on, if it is enforced disable it
@@ -49,7 +50,7 @@ turn off swap to retain node isolation properties as kubernetes support for swap
 su -
 swapoff -a; sed -i '/swap/d' /etc/fstab
 ```
-set up networking configuration
+set up sysctl networking configuration for kubernetes
 ```sh
 cat >>/etc/sysctl.d/kubernetes.conf<<EOF
 net.bridge.bridge-nf-call-ip6tables = 1
@@ -58,7 +59,11 @@ EOF
 sysctl --system
 ```
 
-### Installation process
+---
+
+### Docker Installation process
+
+NOTE: this might have changed follow official [_documentation_](https://docs.docker.com/engine/install/ubuntu/) to install docker engine
 
 install docker
 ```sh
@@ -68,14 +73,24 @@ sudo snap install docker
 
 verify docker service is running by
 ```sh
+sudo service docker start
 sudo systemctl status docker
 ```
 
 (optional) to avoid using sudo in every docker command add your user to docker group
 ```sh
 sudo usermod -aG docker $USER
+getent group
 sudo reboot
 ```
+
+---
+
+### Kubernetes Installation process
+
+NOTE: this might have changed follow official [_documentation_](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/) to install kubeadm
+
+
 
 
 ## References
