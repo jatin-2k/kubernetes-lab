@@ -178,3 +178,4 @@ kubectl taint nodes --all node-role.kubernetes.io/control-plane-
 - [Kubernetes installation guide](https://www.linuxtechi.com/install-kubernetes-on-ubuntu-22-04/?unapproved=53072&moderation-hash=e2092ea8dd88b10870083b1ae3784777#comment-53072)
 - [Video Guide By Just Me And Opensource](https://www.youtube.com/watch?v=Araf8JYQn3w&list=PL34sAs7_26wNBRWM6BDhnonoA5FMERax0)
 - [Control Plane Not Runnig Error](https://k21academy.com/docker-kubernetes/container-runtime-is-not-running/#:~:text=This%20is%20a%20common%20issue,toml%20file.)
+- [Lens metrics setup](https://docs.k8slens.dev/cluster/cluster-metrics/)
