@@ -161,7 +161,20 @@ generate joining token for cluster nodes
 kubeadm token create --print-join-command
 ```
 
+if you want to be able to create nodes on master node
+```sh
+kubectl taint nodes --all node-role.kubernetes.io/control-plane-
+```
+
+## Set up monitoring
+
+- set up kubectl from your host machine to kmaster
+- install lens
+- enable lens metrics from `settings -> lens metrics`
+
+
 ## References
 - [Kubernetes Security Lab](https://devopstales.github.io/kubernetes/k8s-security/#use-firewalld)
+- [Kubernetes installation guide](https://www.linuxtechi.com/install-kubernetes-on-ubuntu-22-04/?unapproved=53072&moderation-hash=e2092ea8dd88b10870083b1ae3784777#comment-53072)
 - [Video Guide By Just Me And Opensource](https://www.youtube.com/watch?v=Araf8JYQn3w&list=PL34sAs7_26wNBRWM6BDhnonoA5FMERax0)
 - [Control Plane Not Runnig Error](https://k21academy.com/docker-kubernetes/container-runtime-is-not-running/#:~:text=This%20is%20a%20common%20issue,toml%20file.)
