@@ -156,6 +156,11 @@ setup calico networking plugin for kubernetes
 kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.0/manifests/calico.yaml
 ```
 
+generate joining token for cluster nodes
+```sh
+kubeadm token create --print-join-command
+```
+
 ## References
 - [Kubernetes Security Lab](https://devopstales.github.io/kubernetes/k8s-security/#use-firewalld)
 - [Video Guide By Just Me And Opensource](https://www.youtube.com/watch?v=Araf8JYQn3w&list=PL34sAs7_26wNBRWM6BDhnonoA5FMERax0)
